@@ -6,7 +6,15 @@ var name = 'Tyler';
 //If the argument you passed in is equal to 'Tyler', return true. If it's not, return false.
 
   //Code Here
-
+var isTyler = function () {
+	if (name === "Tyler") {
+	  return true;
+	}
+	else if (name !== "Tyler") {
+	  return false;
+	}
+	
+}
 
 //Next problem
 
@@ -16,8 +24,11 @@ var name = 'Tyler';
 
 
   //Code Here
-
-
+var getName = function() {
+	var x = prompt("enter your Name");
+	return x;
+}
+getName();
 //Next Problem
 
 
@@ -26,8 +37,11 @@ var name = 'Tyler';
 //then alerts "Welcome, " plus whatever the users name is.
 
   //Code Here
+var welcome = function() {
+	alert("welcome " + getName());
+}
 
-
+welcome();
 //Next problem
 
 
@@ -38,8 +52,14 @@ var name = 'Tyler';
 //returned from adder.
 
   //Code Here
-
-
+var addMe = [1, 5, 6];
+var total = 0;
+var adder = function() {
+  for(var i = 0; i < addMe.length; i++) {
+  	  total = total + addMe[i];
+  }alert("the total number was " + total);
+};
+adder();
 //Next Problem
 
 
@@ -47,7 +67,8 @@ var name = 'Tyler';
 //What is the difference between arguments and parameters?
 
   //Answer Here
-
+parameters are part of the function only.
+arguments are only part of invoking the function.
 
 //Next problem
 
@@ -67,14 +88,17 @@ var name = 'Tyler';
 //Create a function called myName that returns your name
 
   //Code Here
+  var myName = function() {
+  	return "Ladd";
+  }
 
 //Now save the function definition of myName into a new variable called newMyName
 
   //Code Here
-
+var newMyName = myName();
 //Now alert the result of invoking newMyName
 
-
+alert(newMyName);
 
 //Next problem
 
@@ -84,8 +108,22 @@ var name = 'Tyler';
 
   //Code Here
 
-//Now save the result of invoking outerFn into a variable called innerFn.
+	
 
+//Now save the result of invoking outerFn into a variable called innerFn.
+var innerFn = outerFn();
   //Code Here
 
 //Now invoke innerFn.
+
+var outerFn = function(){
+	var innerFn = function() {
+		return "Ladd";
+	};
+	return innerFn;
+	
+}
+var foo = outerFn();
+foo();
+
+
